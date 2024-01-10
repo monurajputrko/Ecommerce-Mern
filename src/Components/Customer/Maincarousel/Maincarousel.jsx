@@ -27,7 +27,8 @@ export const MainCarousel = () => {
     ]);
     const items = MainCarouselData.map((item) => <img className='cursor-pointer' role="presention" src={item.image} alt="Corousel" />)
    
-    return <>  <AliceCarousel
+  return <>  <AliceCarousel
+         autoHeight
         items={items}
         disableButtonsControls
         autoPlay

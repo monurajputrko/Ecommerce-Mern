@@ -8,8 +8,8 @@ export const HomeCorousel = ({data,sectionName}) => {
     
     const [activeIndex, setActiveIndex] = useState(0)
     const responsive = {
-        0: { items: 1.2 },
-        720: { items: 3 },
+        0: { items: 1.1 },
+        720: { items: 2.5 },
         1024: { items: 5 },
     };
     
