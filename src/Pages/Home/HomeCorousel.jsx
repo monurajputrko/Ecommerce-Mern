@@ -8,7 +8,7 @@ export const HomeCorousel = ({data,sectionName}) => {
     
     const [activeIndex, setActiveIndex] = useState(0)
     const responsive = {
-        0: { items: 1.1 },
+        0: { items: 1.2 },
         720: { items: 3 },
         1024: { items: 5 },
     };
@@ -30,7 +30,7 @@ export const HomeCorousel = ({data,sectionName}) => {
 
   return (
       <div className=" px-4 lg:px-8">
-          <h2 style={{paddingRight:"80%"}} className="text-2xl font-extrabold text-gray-800">{sectionName}</h2>
+          <div style={{ width:"100%",textAlign:"left"}} className="text-2xl font-extrabold text-gray-800">{sectionName}</div>
       <div className="relative p-5">
         <AliceCarousel
           key={activeIndex}
