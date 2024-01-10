@@ -4,11 +4,11 @@ import { Button } from "@mui/material";
 import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 import { useState } from "react";
 
-export const HomeCorousel = ({data}) => {
+export const HomeCorousel = ({data,sectionName}) => {
     
     const [activeIndex, setActiveIndex] = useState(0)
     const responsive = {
-        0: { items: 1.5 },
+        0: { items: 1.2 },
         720: { items: 3 },
         1024: { items: 5 },
     };
@@ -29,7 +29,8 @@ export const HomeCorousel = ({data}) => {
     const syncActiveIndex = ({ item }) => setActiveIndex(item);
 
   return (
-    <div className=" px-4 lg:px-8">
+      <div className=" px-4 lg:px-8">
+          <h2 style={{paddingRight:"80%"}} className="text-2xl font-extrabold text-gray-800">{sectionName}</h2>
       <div className="relative p-5">
         <AliceCarousel
           key={activeIndex}
