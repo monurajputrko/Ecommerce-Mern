@@ -1,3 +1,23 @@
+
+  export const MainCarouselData=[
+    {
+      image:
+        "https://assets.myntassets.com/w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2024/1/9/b6876988-9037-4f47-b20a-8c2b5829b48d1704801352139-Prebuzz-Desktop-Main-Banner--1-.jpg",
+    },
+    {
+      image:
+        "https://assets.myntassets.com/w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2022/7/28/6107d28b-2bcb-44e6-9743-655b54550b8f1659020199598-Workwear_Desk--1-.jpg",
+    },
+    {
+      image:
+        "https://assets.myntassets.com/w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2022/7/28/0174e4d7-448c-4746-8572-69461ad5be101659020268081-Tops---Tees_Desk.jpg",
+    },
+    {
+      image:
+        "https://assets.myntassets.com/w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2022/5/31/4031994d-9092-4aa7-aea1-f52f2ae5194f1654006594976-Activewear_DK.jpg",
+    },
+  ];
+
 export const data = [
   {
     id: 1,
