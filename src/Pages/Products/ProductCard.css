@@ -16,3 +16,12 @@
     margin: 10px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
+
+
+
+/* Media query for screens with a maximum width of 767px (adjust as needed) */
+@media screen and (max-width: 1024px) {
+    #filterIcon {
+        display: none;
+    }
+}
