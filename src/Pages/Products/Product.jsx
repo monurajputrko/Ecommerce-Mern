@@ -1,17 +1,4 @@
-/*
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/forms'),
-    ],
-  }
-  ```
-*/
+
 import { Fragment, useState } from "react";
 import { Dialog, Disclosure, Menu, Transition } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
@@ -24,6 +11,7 @@ import {
 } from "@heroicons/react/20/solid";
 import { ProductCard } from "./ProductCard";
 import { data } from "../../fakedata";
+import { FormControl, FormControlLabel, FormLabel, Radio, RadioGroup } from "@mui/material";
 
 const sortOptions = [
   { name: "Most Popular", href: "#", current: true },
@@ -138,13 +126,13 @@ export default function Product() {
                       role="list"
                       className="px-2 py-3 font-medium text-gray-900"
                     >
-                      {subCategories.map((category) => (
+                      {/* {subCategories.map((category) => (
                         <li key={category.name}>
                           <a href={category.href} className="block px-2 py-3">
                             {category.name}
                           </a>
                         </li>
-                      ))}
+                      ))} */}
                     </ul>
 
                     {filters.map((section) => (
@@ -155,11 +143,18 @@ export default function Product() {
                       >
                         {({ open }) => (
                           <>
+                            {/* <FormControl> */}
                             <h3 className="-mx-2 -my-3 flow-root">
                               <Disclosure.Button className="flex w-full items-center justify-between bg-white px-2 py-3 text-gray-400 hover:text-gray-500">
-                                <span className="font-medium text-gray-900">
+                                {/* <span className="font-medium text-gray-900">
                                   {section.name}
-                                </span>
+                                </span> */}
+                                <FormLabel
+                                  sx={{ color: "black" }}
+                                  id="demo-radio-buttons-group-label"
+                                >
+                                  {section.name}
+                                </FormLabel>
                                 <span className="ml-6 flex items-center">
                                   {open ? (
                                     <MinusIcon
@@ -175,31 +170,48 @@ export default function Product() {
                                 </span>
                               </Disclosure.Button>
                             </h3>
-                            <Disclosure.Panel className="pt-6">
-                              <div className="space-y-6">
-                                {section.options.map((option, optionIdx) => (
-                                  <div
-                                    key={option.value}
-                                    className="flex items-center"
-                                  >
-                                    <input
+                            <FormControl>
+                              <RadioGroup
+                                aria-labelledby="demo-radio-buttons-group-label"
+                                defaultValue="Colors"
+                                name="radio-buttons-group"
+                              >
+                                {/* </FormControl> */}
+                                <Disclosure.Panel className="pt-6">
+                                  <div className="space-y-6">
+                                    {section.options.map(
+                                      (option, optionIdx) => (
+                                        <div
+                                          key={option.value}
+                                          className="flex items-center"
+                                        >
+                                          {/* <input
                                       id={`filter-mobile-${section.id}-${optionIdx}`}
                                       name={`${section.id}[]`}
                                       defaultValue={option.value}
                                       type="checkbox"
                                       defaultChecked={option.checked}
                                       className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
-                                    />
-                                    <label
+                                    /> */}
+
+                                          <FormControlLabel
+                                            value={option.value}
+                                            control={<Radio />}
+                                            label={option.value}
+                                          />
+                                          {/* <label
                                       htmlFor={`filter-mobile-${section.id}-${optionIdx}`}
                                       className="ml-3 min-w-0 flex-1 text-gray-500"
                                     >
                                       {option.label}
-                                    </label>
+                                    </label> */}
+                                        </div>
+                                      )
+                                    )}
                                   </div>
-                                ))}
-                              </div>
-                            </Disclosure.Panel>
+                                </Disclosure.Panel>
+                              </RadioGroup>
+                            </FormControl>
                           </>
                         )}
                       </Disclosure>
@@ -289,8 +301,8 @@ export default function Product() {
             <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-5">
               {/* Filters */}
               <form className="hidden lg:block">
-                <h3 className="sr-only">Categories</h3>
-                <ul
+                {/* <h3 className="sr-only">Categories</h3> */}
+                {/* <ul
                   role="list"
                   className="space-y-4 border-b border-gray-200 pb-6 text-sm font-medium text-gray-900"
                 >
@@ -299,7 +311,7 @@ export default function Product() {
                       <a href={category.href}>{category.name}</a>
                     </li>
                   ))}
-                </ul>
+                </ul> */}
 
                 {filters.map((section) => (
                   <Disclosure
@@ -309,7 +321,7 @@ export default function Product() {
                   >
                     {({ open }) => (
                       <>
-                        <h3 className="-my-3 flow-root">
+                        {/* <h3 className="-my-3 flow-root">
                           <Disclosure.Button className="flex w-full items-center justify-between bg-white py-3 text-sm text-gray-400 hover:text-gray-500">
                             <span className="font-medium text-gray-900">
                               {section.name}
@@ -353,7 +365,74 @@ export default function Product() {
                               </div>
                             ))}
                           </div>
-                        </Disclosure.Panel>
+                        </Disclosure.Panel> */}
+
+                        <h3 className="-mx-2 -my-3 flow-root">
+                          <Disclosure.Button className="flex w-full items-center justify-between bg-white px-2 py-3 text-gray-400 hover:text-gray-500">
+                            {/* <span className="font-medium text-gray-900">
+                                  {section.name}
+                                </span> */}
+                            <FormLabel
+                              sx={{ color: "black" }}
+                              id="demo-radio-buttons-group-label"
+                            >
+                              {section.name}
+                            </FormLabel>
+                            <span className="ml-6 flex items-center">
+                              {open ? (
+                                <MinusIcon
+                                  className="h-5 w-5"
+                                  aria-hidden="true"
+                                />
+                              ) : (
+                                <PlusIcon
+                                  className="h-5 w-5"
+                                  aria-hidden="true"
+                                />
+                              )}
+                            </span>
+                          </Disclosure.Button>
+                        </h3>
+                        <FormControl>
+                          <RadioGroup
+                            aria-labelledby="demo-radio-buttons-group-label"
+                            defaultValue="Colors"
+                            name="radio-buttons-group"
+                          >
+                            {/* </FormControl> */}
+                            <Disclosure.Panel className="pt-6">
+                              <div className="space-y-6">
+                                {section.options.map((option, optionIdx) => (
+                                  <div
+                                    key={option.value}
+                                    className="flex items-center"
+                                  >
+                                    {/* <input
+                                      id={`filter-mobile-${section.id}-${optionIdx}`}
+                                      name={`${section.id}[]`}
+                                      defaultValue={option.value}
+                                      type="checkbox"
+                                      defaultChecked={option.checked}
+                                      className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                                    /> */}
+
+                                    <FormControlLabel
+                                      value={option.value}
+                                      control={<Radio />}
+                                      label={option.value}
+                                    />
+                                    {/* <label
+                                      htmlFor={`filter-mobile-${section.id}-${optionIdx}`}
+                                      className="ml-3 min-w-0 flex-1 text-gray-500"
+                                    >
+                                      {option.label}
+                                    </label> */}
+                                  </div>
+                                ))}
+                              </div>
+                            </Disclosure.Panel>
+                          </RadioGroup>
+                        </FormControl>
                       </>
                     )}
                   </Disclosure>
