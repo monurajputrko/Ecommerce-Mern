@@ -2,7 +2,7 @@ import { MainCarousel } from "../../Components/Customer/Maincarousel/Maincarouse
 import { data } from "../../fakedata";
 import { HomeCorousel } from "./HomeCorousel"
 
-export const HomePage = () => {
+export const Home = () => {
     
     return (
       <div>
